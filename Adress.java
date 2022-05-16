@@ -8,12 +8,12 @@ public class Adress{
     private String apto;
 
     public Adress() {
-        this.calle = calle;
-        this.nomenclatura = nomenclatura;
-        this.barrio = barrio;
-        this.ciudad = ciudad;
-        this.edificio = edificio;
-        this.apto = apto;
+        this.calle = null;
+        this.nomenclatura = null;
+        this.barrio = null;
+        this.ciudad = null;;
+        this.edificio = null;
+        this.apto = null;
     }
 
     public Adress(String calle, String nomenclatura, String barrio, String ciudad, String edificio, String apto) {

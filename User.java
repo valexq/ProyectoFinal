@@ -6,28 +6,48 @@ import java.util.StringTokenizer;
 
 
 
+
+   
+    
 public class User {
     private String nombre;
     private long id;
-
-
-
+    private Date fecha_nac;
+    private String ciudad_nac;
+    private long tel;
+    private String email;
+    private Adress dir;
+    
+    
     public User() {
-        this.nombre = nombre;
-        this.id = id;
-
+        this.nombre = null;
+        this.id = 0;
+        this.fecha_nac = null;
+        this.ciudad_nac = null;
+        this.tel = 0;
+        this.email = null;
+        this.dir = null;
     }
 
-
+    public User(String nombre, long id, Date fecha_nac, String ciudad_nac, long tel, String email, Adress dir) {
+        this.nombre = nombre;
+        this.id = id;
+        this.fecha_nac = fecha_nac;
+        this.ciudad_nac = ciudad_nac;
+        this.tel = tel;
+        this.email = email;
+        this.dir = dir;
+    }
+   
     public User(String nombre, long id) {
         this();
         this.nombre = nombre;
         this.id = id;
-
+        
     }
+    
 
-
-
+    
     public String getNombre() {
         return nombre;
     }
@@ -43,8 +63,57 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
+
+    public Date getFecha_nac() {
+        return fecha_nac;
+    }
+
+    public void setFecha_nac(Date fecha_nac) {
+        this.fecha_nac = fecha_nac;
+    }
+
+    public String getCiudad_nac() {
+        return ciudad_nac;
+    }
+
+    public void setCiudad_nac(String ciudad_nac) {
+        this.ciudad_nac = ciudad_nac;
+    }
+
+    public long getTel() {
+        return tel;
+    }
+
+    public void setTel(long tel) {
+        this.tel = tel;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Adress getDir() {
+        return dir;
+    }
+
+    public void setDir(Adress dir) {
+        this.dir = dir;
+        
+    }
+    @Override
+    public String toString() {
+        return "\n\n Nombre: " + nombre + "\n ID: " + id + "\n Fecha de nacimiento: " + fecha_nac
+                + "\n Ciudad de nacimiento: " + ciudad_nac + "\n Telefono: " + tel + "\n Email: " + email
+                + "\n Direccion: " + dir;
+    }
     public String toString1() {
-        return nombre + " " + id + " " ;
+        return nombre + " " + id + " " + fecha_nac + " "
+                + ciudad_nac + " " + tel + " " + email
+                + " " + dir;
     }
     public void toFile(File input) {
         try {
@@ -60,16 +129,20 @@ public class User {
         }
     }
     public void importFileUser(String input) {
-        StringTokenizer ts = new StringTokenizer(input);
-        this.nombre = ts.nextToken();
-        this.id = Long.parseLong(ts.nextToken());
+            StringTokenizer ts = new StringTokenizer(input);
+            this.nombre = ts.nextToken();
+            this.id = Long.parseLong(ts.nextToken());
+            this.fecha_nac = new Date (Short.valueOf(ts.nextToken()),Short.valueOf(ts.nextToken()),Short.valueOf(ts.nextToken()));
+            this.ciudad_nac = ts.nextToken();
+            this.tel =Long.parseLong(ts.nextToken());
+            this.email = ts.nextToken();
+            this.dir = new Adress(ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken());
+           
+            System.out.println("User created sucessfully");
 
-
-        System.out.println("User created sucessfully");
-
-
+            
     }
 
-
+    
 }
-
+  

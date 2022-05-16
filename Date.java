@@ -4,9 +4,9 @@ public class Date {
     private short aa;
 
     public Date(){
-        this.dd = dd;
-        this.mm = mm;
-        this.aa = aa;
+        this.dd = 0;
+        this.mm = 0;
+        this.aa = 0;
     }
 
     public Date(short dd, short mm, short aa) {
