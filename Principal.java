@@ -53,20 +53,24 @@ public class Principal {
         e5.setDir(new Adress("Calle", "29B","Boston","204","Vidia","Medellin"));
         Password c5 = new Password(e5, "milena123", 'E');
 
-        List empleados = new List();
-        empleados.addFirst(e1);
-        empleados.addFirst(e2);
-        empleados.addFirst(e3);
-        empleados.addFirst(e4);
-        empleados.addFirst(e5);
-        empleados.printList();
-        List pass = new List();
-        pass.addFirst(c1);
-        pass.addFirst(c2);
-        pass.addFirst(c3);
-        pass.addFirst(c4);
-        pass.addFirst(c5);
-        pass.printList();
+        crearUsuario empleados = new crearUsuario();
+        empleados.AgregarUsu(e1);
+        empleados.AgregarUsu(e2);
+        empleados.AgregarUsu(e3);
+        empleados.AgregarUsu(e4);
+        empleados.AgregarUsu(e5);
+
+        empleados.toFileUsu("Empleados.txt");
+
+        crearUsuario pass = new crearUsuario();
+        pass.AgregarPass(c1);
+        pass.AgregarPass(c2);
+        pass.AgregarPass(c3);
+        pass.AgregarPass(c4);
+        pass.AgregarPass(c5);
+
+
+        pass.toFilePass("Password.txt");
 
     }
 
