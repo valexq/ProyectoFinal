@@ -140,6 +140,12 @@ public class DoubleList {
             addLast(a);
         }
     }
-
-   }
+    public void printListD(){
+        DoubleNode recorrer = head;
+        while(recorrer != null){
+            System.out.println(recorrer.getData());
+            System.out.println();
+            recorrer = recorrer.getNext();
+        }
+    }
 }
