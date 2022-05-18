@@ -11,7 +11,7 @@ public class BSTEntry {
         return data;
     }
 
-    public int getK() {
+    public int getKey() {
         return k;
     }
 
@@ -19,7 +19,7 @@ public class BSTEntry {
         this.data = data;
     }
 
-    public void setK(int k) {
+    public void setKey(int k) {
         this.k = k;
     }
 

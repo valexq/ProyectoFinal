@@ -1,7 +1,7 @@
 public class BinaryTree {
 
     private DoubleNode root;
-    private int size;
+    protected int size;
 
     public BinaryTree() {
         root = null;
