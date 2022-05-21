@@ -1,23 +1,20 @@
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 public class crearUsuario {
-        private  List registro;
-
+        private  List empleado;
+        private  List password;
         public crearUsuario() {
-            registro = new List();
+            empleado = new List();
+            password = new List();
         }
 
         public void AgregarUsu(User u){
-           registro.addFirst(u);
+           empleado.addFirst(u);
         }
         public void AgregarPass(Password c){
-            registro.addFirst(c);
+            password.addFirst(c);
         }
         public User BuscarUsu(long id){
-            Node temp= registro.first();
+            Node temp= empleado.first();
             while(temp != null && ((User)temp.getData()).getId() != id){
                 temp = temp.getNext();
             }
@@ -30,7 +27,7 @@ public class crearUsuario {
             }
         }
         public Password BuscarPass(long id){
-            Node temp= registro.first();
+            Node temp= password.first();
             while(temp != null && ((Password)temp.getData()).getUsu().getId() != id){
                 temp = temp.getNext();
             }
@@ -38,16 +35,16 @@ public class crearUsuario {
                 return null;
             }
             else{
-                System.out.println("Usuario Encontrado");
+                System.out.println("Password Encontrado");
                 return (Password) temp.getData();
             }
         }
 
 
-    public Boolean eliminar(int id){
-        if (!registro.isEmpty()){
+    public Boolean eliminarUsu(int id){
+        if (!empleado.isEmpty()){
             Node anterior = null;
-            Node temp = registro.first();
+            Node temp = empleado.first();
             while(temp != null && ((User)temp.getData()).getId()!= id){
                 anterior = temp;
                 temp = temp.getNext();
@@ -56,14 +53,14 @@ public class crearUsuario {
                 System.out.println("Usuario Eliminado");
                 return false;
             }else{
-                if (temp == registro.first()){
-                    registro.removeFirst();
+                if (temp == empleado.first()){
+                    empleado.removeFirst();
                     return true;
                 }
                 else{
                     anterior.setNext(temp.getNext());
                     temp.setNext(null);
-                    registro.setSize(registro.size()-1);
+                    empleado.setSize(empleado.size()-1);
                     System.out.println("Usuario Eliminado");
                     return true;
                 }
@@ -78,7 +75,7 @@ public class crearUsuario {
         public void toFileUsu(String input) {
             try{
                 BufferedWriter out = new BufferedWriter(new FileWriter(input));
-                Node temp = registro.first();
+                Node temp = empleado.first();
                 while(temp != null){
                     out.write(((User)temp.getData()).toString1());
                     out.newLine();
@@ -93,7 +90,7 @@ public class crearUsuario {
         public void toFilePass(String input) {
             try{
                 BufferedWriter out = new BufferedWriter(new FileWriter(input));
-                Node temp = registro.first();
+                Node temp = password.first();
                 while(temp != null){
                     out.write(((Password)temp.getData()).toString());
                     out.newLine();
@@ -124,5 +121,7 @@ public class crearUsuario {
             }
 
         }
-
+        public void imprimirPass(){
+            password.printList();
+        }
 }

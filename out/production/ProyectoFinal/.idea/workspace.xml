@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d92f1cbd-6019-4e29-99b0-90b85a82695b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/crearUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/crearUsuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +36,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.turno">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal" />
       <module name="ProyectoFinal" />
@@ -44,8 +44,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="turno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="turno" />
+      <module name="ProyectoFinal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.turno" />
         <item itemvalue="Application.Principal" />
       </list>
     </recent_temporary>

@@ -68,8 +68,9 @@ public class Principal {
         pass.AgregarPass(c3);
         pass.AgregarPass(c4);
         pass.AgregarPass(c5);
-
-
+        pass.imprimirPass();
+        System.out.println(empleados.BuscarUsu(3785589));
+        System.out.println(empleados.BuscarPass(3785589));
         pass.toFilePass("Password.txt");
 
     }
