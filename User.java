@@ -18,7 +18,7 @@ public class User {
     private String email;
     private Adress dir;
     private String pass;
-    private char desc;
+    private String desc;
     private BAoML bandYleidos;
     private Borradores borrador;
     public User() {
@@ -30,7 +30,7 @@ public class User {
         this.email = null;
         this.dir = null;
         this.pass = null;
-        this.desc = ' ' ;
+        this.desc = null ;
         this.bandYleidos = null;
         this.borrador = null;
     }
@@ -96,16 +96,22 @@ public class User {
     public void setPass(String pass){
         this.pass = pass;
     }
-    public char getDesc() {
+    public String getDesc() {
         return desc;
     }
-    public void setDesc(char desc){
+    public void setDesc(String desc){
         this.desc = desc;
     }
     public Borradores getBorrador(){
         return borrador;
     }
 
+    public DoubleList getBandeja() {
+        return bandYleidos.getBandeja();
+    }
+    public Stack getleidos() {
+        return bandYleidos.getMensajeL();
+    }
     public String toStringPrintU() {
         return "\n\n Nombre: " + nombre + "\n ID: " + id + "\n Fecha de nacimiento: " + fecha_nac
                 + "\n Ciudad de nacimiento: " + ciudad_nac + "\n Telefono: " + tel + "\n Email: " + email
@@ -131,7 +137,7 @@ public class User {
         } catch (IOException e) {
             System.out.println("ERROR");
         }
-    }
+    }*/
     public void importFileUser(String input) {
             StringTokenizer ts = new StringTokenizer(input);
             this.nombre = ts.nextToken();
@@ -141,12 +147,13 @@ public class User {
             this.tel =Long.parseLong(ts.nextToken());
             this.email = ts.nextToken();
             this.dir = new Adress(ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken());
-
+            this.pass = ts.nextToken();
+            this.desc = ts.nextToken();
             System.out.println("User created sucessfully");
 
 
     }
-*/
+
 
 }
   
