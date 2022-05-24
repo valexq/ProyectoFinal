@@ -1,15 +1,15 @@
-public class Hora {
+public class Time {
     private short hh;
     private short mm;
     private short ss;
 
-    public Hora(){
+    public Time(){
         this.hh = 0;
         this.mm = 0;
         this.ss = 0;
     }
 
-    public Hora(short hh, short mm, short ss) {
+    public Time(short hh, short mm, short ss) {
         this.hh = hh;
         this.mm = mm;
         this.ss = ss;

@@ -2,15 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d92f1cbd-6019-4e29-99b0-90b85a82695b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BAoML.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Borradores.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/Queue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crearUsuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/crearUsuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BST.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BSTEntry.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BinaryTree.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Empleados.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Hora.java" beforeDir="false" afterPath="$PROJECT_DIR$/Time.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Password.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Password.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Principal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/crearUsuario.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/BSTEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/BSTEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/BinaryTree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/BST.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/BST.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/Password.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/Password.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/Queue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/Queue.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/crearUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/crearUsuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/turno.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,13 +47,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
-}</component>
-  <component name="RunManager" selected="Application.turno">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal" />
       <module name="ProyectoFinal" />
@@ -59,8 +76,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.turno" />
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.turno" />
       </list>
     </recent_temporary>
   </component>
