@@ -5,10 +5,21 @@
       <change afterPath="$PROJECT_DIR$/Login.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Mensaje.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Principal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SistemaAdministrador.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/SistemaEmpleado.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crearUsuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BAoML.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAoML.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/BST.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/BSTEntry.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/BinaryTree.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/Hora.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/Password.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/Principal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/crearUsuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/crearUsuario.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +58,16 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Principal">
+  <component name="RunManager" selected="Application.crearUsuario">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal" />
+      <module name="ProyectoFinal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="crearUsuario" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="crearUsuario" />
       <module name="ProyectoFinal" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -64,6 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.crearUsuario" />
         <item itemvalue="Application.Principal" />
         <item itemvalue="Application.turno" />
       </list>

@@ -1,3 +1,4 @@
+import javax.swing.*;
 public class DoubleList {
 
     private DoubleNode head;
@@ -49,7 +50,7 @@ public class DoubleList {
         } else {
             DoubleNode n = new DoubleNode(a);
             n.setPrev(tail);
-            tail.setNext(n);
+                tail.setNext(n);
             tail = n;
             size++;
         }
@@ -110,20 +111,6 @@ public class DoubleList {
                 size--;
                 return temp_data;
             }
-        }
-    }
-    public void addBefore(DoubleNode n, Object o){
-        if (n == head){
-            addFirst(o);
-        }
-        else {
-            DoubleNode m = new DoubleNode(o);
-            DoubleNode anterior = n.getPrev();
-            anterior.setNext(m);
-            m.setPrev(anterior);
-            m.setNext(n);
-            n.setPrev(m);
-            size++;
         }
     }
     public void addAfter(DoubleNode n, Object a){

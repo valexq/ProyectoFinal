@@ -14,18 +14,34 @@ public class SistemaAdministrador extends   SistemaEmpleado {
     public void AgregarU(User u){
         empleados.addFirst(u);
     }
-    public User BuscarU(long id){
-        DoubleNode temp= empleados.First();
-        while(temp != null && ((User)temp.getData()).getId() != id){
-            temp = temp.getNext();
-        }
-        if (temp== null){
-            return null;
-        }
-        else{
-            System.out.println("U   suario Encontrado");
-            return (User)temp.getData();
-        }
+    /* public DoubleNode findRecursive(long id, DoubleNode v){
+         if (((User)v.getData()).getId() == id ){
+             return v;
+         }
+         else {
+             return findRecursive(id, v.getNext());
+         }
+     }
+     public DoubleNode find(long id){
+         return findRecursive(id, empleados.First());
+   }*/
+     public User BuscarU(long id){
+         DoubleNode temp= empleados.First();
+         while(temp != null && ((User)temp.getData()).getId() != id){
+             temp = temp.getNext();
+         }
+         if (temp== null){
+             return null;
+         }
+         else{
+             System.out.println("Usuario Encontrado");
+             return (User)temp.getData();
+         }
+     }
+    public User EliminarU (long id){
+
+        User u = BuscarU(id);
+        return (User)empleados.remove(new DoubleNode(u));
     }
     public void toFileP() {
         try {
@@ -63,8 +79,8 @@ public class SistemaAdministrador extends   SistemaEmpleado {
     }
     public void importUser(String archivo){
         try{
-            FileReader in = new FileReader(archivo);
-            BufferedReader b1 = new BufferedReader(in);
+
+            BufferedReader b1 = new BufferedReader(new FileReader(archivo));
             String str = b1.readLine();
 
             while(str != null){
@@ -80,5 +96,8 @@ public class SistemaAdministrador extends   SistemaEmpleado {
         }
 
     }
+    public void printListUsu() {
+        empleados.printListD();
 
+    }
 }
