@@ -20,5 +20,8 @@ public class Login {
         else
             return pass;
     }
+    public void Verificar() {
 
+
+    }
 }

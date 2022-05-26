@@ -71,9 +71,9 @@ public class Principal {
         sA.AgregarU(e5);
 
 
-        sA.printListUsu();
-        sA.toFileE();
-
+        SistemaAdministrador c = new SistemaAdministrador();
+        c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
+        c.printListUsu();
 
 
 

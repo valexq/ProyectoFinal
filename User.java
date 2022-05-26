@@ -139,8 +139,7 @@ public class User {
         this.tel =Long.parseLong(ts.nextToken());
         this.email = ts.nextToken();
         this.dir = new Adress(ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken());
-        this.pass = ts.nextToken();
-        this.desc = ts.nextToken();
+
 
         System.out.println("User created sucessfully");
 

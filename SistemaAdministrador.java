@@ -66,44 +66,32 @@ public class SistemaAdministrador extends   SistemaEmpleado {
         }
 
     }
-    public void importUser(String archivo){
+    public void importUser(String emp, String pass){
         try{
 
-            BufferedReader b1 = new BufferedReader(new FileReader(archivo));
+            BufferedReader b1 = new BufferedReader(new FileReader(emp));
+            BufferedReader b2 = new BufferedReader(new FileReader(pass));
             String str = b1.readLine();
+            String ctr = b2.readLine();
 
             while(str != null){
                 User u1 = new User();
                 u1.importFileUser(str);
+                u1.importFilePass(ctr);
                 AgregarU(u1);
                 str = b1.readLine();
+                ctr = b2.readLine();
             }
             b1.close();
+            b2.close();
 
         }catch(Exception e){
             System.out.println("ERROR");
         }
 
     }
-    public void importPass(String archivo){
-        try{
 
-            BufferedReader b1 = new BufferedReader(new FileReader(archivo));
-            String str = b1.readLine();
 
-            while(str != null){
-                User u1 = new User();
-                u1.importFilePass(str);
-                AgregarU(u1);
-                str = b1.readLine();
-            }
-            b1.close();
-
-        }catch(Exception e){
-            System.out.println("ERROR");
-        }
-
-    }
     public void printListUsu() {
         empleados.printListD();
 
