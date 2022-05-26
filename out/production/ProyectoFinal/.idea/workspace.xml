@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d92f1cbd-6019-4e29-99b0-90b85a82695b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/crearUsuario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Login.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Mensaje.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Principal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/SistemaEmpleado.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BAoML.java" beforeDir="false" afterPath="$PROJECT_DIR$/BAoML.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,15 +34,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/ParaOrdenar/caro/programacion/titulo"
   }
-}</component>
-  <component name="RunManager">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Principal">
     <configuration name="Principal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Principal" />
+      <module name="ProyectoFinal" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="turno" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="turno" />
       <module name="ProyectoFinal" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -47,6 +65,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Principal" />
+        <item itemvalue="Application.turno" />
       </list>
     </recent_temporary>
   </component>

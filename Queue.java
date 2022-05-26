@@ -1,5 +1,5 @@
 public class Queue {
-    private List data;
+        private List data;
 
     public Queue(){
         data = new List();
@@ -13,6 +13,7 @@ public class Queue {
     public void Enqueue(Object e){
         data.addLast(e);
     }
+
     public Object Dequeue(){
         if(isEmpty()){
             return null;

@@ -54,6 +54,7 @@ public class Mensaje {
     }
 
 
+
     public String toString1() {
         return "Mensaje{" +
                 "remitente=" + remitente +
@@ -72,4 +73,25 @@ public class Mensaje {
                 ", asunto='" + asunto + '\'' +
                 ' ';
     }
+
+
+    public String toStringPrintM() {
+        return "Mensaje" +
+                "\n Remitente: " + remitente +
+                "\n Fecha: " + fechaIn +
+                "\n Hora: " + horaIn +
+                "\n Asunto: " + asunto +
+                "\n Mensaje: " + msj ;
+    }
+    public String toStringM() {
+        return  remitente + " " + fechaIn + " " + horaIn + " " + asunto + " " + msj ;
+    }
+
+    @Override
+    //no es remitente si no el nombre del usuario
+    public String toString() {
+        return "\n Remitente: " + remitente + "\t\t\t Fecha: " + fechaIn +
+                "\n Asunto: " + asunto ;
+    }
 }
+

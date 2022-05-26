@@ -17,8 +17,10 @@ public class User {
     private long tel;
     private String email;
     private Adress dir;
-    
-    
+    private String pass;
+    private String desc;
+    private BAoML bandYleidos;
+    private Borradores borrador;
     public User() {
         this.nombre = null;
         this.id = 0;
@@ -27,27 +29,11 @@ public class User {
         this.tel = 0;
         this.email = null;
         this.dir = null;
+        this.pass = null;
+        this.desc = null ;
+        this.bandYleidos = null;
+        this.borrador = null;
     }
-
-    public User(String nombre, long id, Date fecha_nac, String ciudad_nac, long tel, String email, Adress dir) {
-        this.nombre = nombre;
-        this.id = id;
-        this.fecha_nac = fecha_nac;
-        this.ciudad_nac = ciudad_nac;
-        this.tel = tel;
-        this.email = email;
-        this.dir = dir;
-    }
-   
-    public User(String nombre, long id) {
-        this();
-        this.nombre = nombre;
-        this.id = id;
-        
-    }
-    
-
-    
     public String getNombre() {
         return nombre;
     }
@@ -104,22 +90,46 @@ public class User {
         this.dir = dir;
         
     }
-    @Override
-    public String toString() {
+    public String getPass(){
+        return pass;
+    }
+    public void setPass(String pass){
+        this.pass = pass;
+    }
+    public String getDesc() {
+        return desc;
+    }
+    public void setDesc(String desc){
+        this.desc = desc;
+    }
+    public Borradores getBorrador(){
+        return borrador;
+    }
+
+    public DoubleList getBandeja() {
+        return bandYleidos.getBandeja();
+    }
+    public Stack getleidos() {
+        return bandYleidos.getMensajeL();
+    }
+    public String toStringPrintU() {
         return "\n\n Nombre: " + nombre + "\n ID: " + id + "\n Fecha de nacimiento: " + fecha_nac
                 + "\n Ciudad de nacimiento: " + ciudad_nac + "\n Telefono: " + tel + "\n Email: " + email
                 + "\n Direccion: " + dir;
     }
-    public String toString1() {
+    public String toStringE() {
         return nombre + " " + id + " " + fecha_nac + " "
                 + ciudad_nac + " " + tel + " " + email
                 + " " + dir;
     }
-    public void toFile(File input) {
+    public String toStringP() {
+        return id + " " + pass + " " + desc;
+    }
+    /*public void toFile(File input) {
         try {
             FileWriter archU = new FileWriter(input);
             BufferedWriter m = new BufferedWriter(archU);
-            m.write(toString1());
+            m.write(toStringE());
             m.newLine();
             m.close();
             System.out.println("File created sucessfully");
@@ -127,7 +137,7 @@ public class User {
         } catch (IOException e) {
             System.out.println("ERROR");
         }
-    }
+    }*/
     public void importFileUser(String input) {
             StringTokenizer ts = new StringTokenizer(input);
             this.nombre = ts.nextToken();
@@ -137,12 +147,13 @@ public class User {
             this.tel =Long.parseLong(ts.nextToken());
             this.email = ts.nextToken();
             this.dir = new Adress(ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken());
-           
+            this.pass = ts.nextToken();
+            this.desc = ts.nextToken();
             System.out.println("User created sucessfully");
 
-            
+
     }
 
-    
+
 }
   
