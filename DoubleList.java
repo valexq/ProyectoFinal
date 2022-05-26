@@ -92,26 +92,26 @@ public class DoubleList {
             return temp_data;
         }
     }
-    public Object remove (DoubleNode n){
-        if (n == head){
-            return removeFirst();
-        }
-        else{
-            if(n==tail){
-                return removeLast();
-            }
-            else{
-                Object temp_data = n.getData();
-                DoubleNode temp_prev = n.getPrev();
-                DoubleNode temp_next = n.getNext();
-                temp_prev.setNext(temp_next);
-                temp_next.setPrev(temp_prev);
-                n.setNext(null);
-                n.setPrev(null);
+    public Object remove(long id){
+        DoubleNode recorrer = head;
+        while(recorrer != null){
+            Object temp_data = recorrer.getData();
+            if(((User)temp_data).getId() == id){
+                if(recorrer == head){
+                    return removeFirst();
+                }else if(recorrer == tail){
+                    return removeLast();
+                }
+                recorrer.getPrev().setNext(recorrer.getNext());
+                recorrer.getNext().setPrev(recorrer.getPrev());
+                recorrer.setPrev(null);
+                recorrer.setNext(null);
                 size--;
                 return temp_data;
             }
+            recorrer = recorrer.getNext();
         }
+        return null;
     }
     public void addAfter(DoubleNode n, Object a){
         if (n !=tail){

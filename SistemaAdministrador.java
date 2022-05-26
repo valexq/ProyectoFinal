@@ -40,38 +40,27 @@ public class SistemaAdministrador extends   SistemaEmpleado {
      }
     public User EliminarU (long id){
 
-        User u = BuscarU(id);
-        return (User)empleados.remove(new DoubleNode(u));
-    }
-    public void toFileP() {
-        try {
-            FileWriter archU = new FileWriter("Password.txt");
-            BufferedWriter p = new BufferedWriter(archU);
-            DoubleList temp;
-            temp = empleados;
-            while (!(empleados.isEmpty())) {
-                p.write(((User) temp.removeFirst()).toStringP());
-                p.newLine();
-            }
 
-            p.close();
-        } catch (IOException e) {
-            System.out.println("ERROR");
-        }
-
+        return (User)empleados.remove(id);
     }
+
     public void toFileE() {
         try {
-            FileWriter archU = new FileWriter("Empleados.txt");
-            BufferedWriter p = new BufferedWriter(archU);
+
+            BufferedWriter e = new BufferedWriter(new FileWriter("Empleados.txt"));
+            BufferedWriter p = new BufferedWriter(new FileWriter("Password.txt"));
             DoubleList temp;
             temp = empleados;
             while (!(empleados.isEmpty())) {
-                p.write(((User) temp.removeFirst()).toStringE());
+                User aux = (User)temp.removeFirst();
+                e.write(( aux).toStringE());
+                p.write(( aux).toStringP());
+                e.newLine();
                 p.newLine();
             }
-
+            e.close();
             p.close();
+
         } catch (IOException e) {
             System.out.println("ERROR");
         }
@@ -86,6 +75,25 @@ public class SistemaAdministrador extends   SistemaEmpleado {
             while(str != null){
                 User u1 = new User();
                 u1.importFileUser(str);
+                AgregarU(u1);
+                str = b1.readLine();
+            }
+            b1.close();
+
+        }catch(Exception e){
+            System.out.println("ERROR");
+        }
+
+    }
+    public void importPass(String archivo){
+        try{
+
+            BufferedReader b1 = new BufferedReader(new FileReader(archivo));
+            String str = b1.readLine();
+
+            while(str != null){
+                User u1 = new User();
+                u1.importFilePass(str);
                 AgregarU(u1);
                 str = b1.readLine();
             }

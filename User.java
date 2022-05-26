@@ -115,7 +115,7 @@ public class User {
                 + " " + dir;
     }
     public String toStringP (){
-        return id + pass+ desc;
+        return id + " " + pass+ " "+ desc;
     }
     public void toFile(File input) {
         try {
@@ -139,11 +139,24 @@ public class User {
         this.tel =Long.parseLong(ts.nextToken());
         this.email = ts.nextToken();
         this.dir = new Adress(ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken());
+        this.pass = ts.nextToken();
+        this.desc = ts.nextToken();
 
         System.out.println("User created sucessfully");
 
 
     }
+    public void importFilePass(String input) {
+        StringTokenizer ts = new StringTokenizer(input);
+        this.id = Long.parseLong(ts.nextToken());
+        this.pass = ts.nextToken();
+        this.desc = ts.nextToken();
+
+        System.out.println("User created sucessfully");
+
+
+    }
+
 
 
 }

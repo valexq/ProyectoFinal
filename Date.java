@@ -1,4 +1,4 @@
-public class Date {
+public class Date extends java.util.Date {
     private short dd;
     private short mm;
     private short aa;

@@ -4,13 +4,14 @@ public class Mensaje {
     private Time horaIn;
     private String asunto;
     private String msj;
-
+    private long receptor;
     public Mensaje(){
         remitente = 0;
         fechaIn = null;
         horaIn = null;
         asunto = null;
         msj = null;
+        receptor = 0;
     }
 
     public long getRemitente() {
@@ -53,9 +54,17 @@ public class Mensaje {
         this.msj = msj;
     }
 
+    public long getReceptor (){
+        return receptor;
+    }
+
+    public void setReceptor(long receptor) {
+        this.receptor = receptor;
+    }
 
     public String toStringPrintM() {
         return "Mensaje" +
+                "\n Receptor: " + receptor+
                 "\n Remitente: " + remitente +
                 "\n Fecha: " + fechaIn +
                 "\n Hora: " + horaIn +
@@ -63,11 +72,11 @@ public class Mensaje {
                 "\n Mensaje: " + msj ;
     }
     public String toStringM() {
-        return  remitente + " " + fechaIn + " " + horaIn + " " + asunto + " " + msj ;
+        return receptor+ remitente + " " + fechaIn + " " + horaIn + " " + asunto + " " + msj ;
     }
 
     @Override
-    //no es remitente si no el nombre del usuario
+
     public String toString() {
         return "\n Remitente: " + remitente + "\t\t\t Fecha: " + fechaIn +
                 "\n Asunto: " + asunto ;

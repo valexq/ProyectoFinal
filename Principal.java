@@ -71,6 +71,11 @@ public class Principal {
         sA.AgregarU(e5);
 
 
+        sA.printListUsu();
+        sA.toFileE();
+
+
+
 
 
 
