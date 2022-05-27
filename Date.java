@@ -4,9 +4,8 @@ public class Date extends java.util.Date {
     private short aa;
 
     public Date(){
-        this.dd = 0;
-        this.mm = 0;
-        this.aa = 0;
+        super();
+
     }
 
     public Date(short dd, short mm, short aa) {

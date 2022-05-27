@@ -14,5 +14,8 @@ public class BAoML {
     public Stack getMensajeL() {
         return mensajeL;
     }
+    public void agregarbandeja(Mensaje mens){
+
+    }
 
 }

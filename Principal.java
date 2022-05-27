@@ -1,4 +1,7 @@
 import java.util.Scanner;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 public class Principal {
 
     static Login log= new Login();
@@ -69,11 +72,12 @@ public class Principal {
         sA.AgregarU(e3);
         sA.AgregarU(e4);
         sA.AgregarU(e5);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        System.out.println(dtf.format(LocalDateTime.now()));
 
 
-        SistemaAdministrador c = new SistemaAdministrador();
-        c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
-        c.printListUsu();
+
+
 
 
 

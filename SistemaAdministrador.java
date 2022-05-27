@@ -11,6 +11,9 @@ public class SistemaAdministrador extends   SistemaEmpleado {
         usuario.UsuarioNuevo();
 
     }
+    public User getUser(){
+        return (User)empleados.First().getData();
+    }
     public void AgregarU(User u){
         empleados.addFirst(u);
     }
