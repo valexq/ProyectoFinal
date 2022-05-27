@@ -1,12 +1,10 @@
-public class Time {
+public class Time extends java.util.Date  {
     private short hh;
     private short mm;
     private short ss;
 
     public Time(){
-        this.hh = 0;
-        this.mm = 0;
-        this.ss = 0;
+        super();
     }
 
     public Time(short hh, short mm, short ss) {

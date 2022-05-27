@@ -3,13 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d92f1cbd-6019-4e29-99b0-90b85a82695b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Date.java" beforeDir="false" afterPath="$PROJECT_DIR$/Date.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/Login.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Mensaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/Mensaje.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/Principal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SistemaAdministrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaAdministrador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SistemaEmpleado.java" beforeDir="false" afterPath="$PROJECT_DIR$/SistemaEmpleado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/Principal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/Principal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ProyectoFinal/SistemaAdministrador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ProyectoFinal/SistemaAdministrador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Time.java" beforeDir="false" afterPath="$PROJECT_DIR$/Time.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -1,7 +1,7 @@
 public class Mensaje {
     private long remitente;
-    private Date fechaIn;
-    private Time horaIn;
+    private String fechaIn;
+    private String horaIn;
     private String asunto;
     private String msj;
     private long receptor;
@@ -22,19 +22,19 @@ public class Mensaje {
         this.remitente = remitente;
     }
 
-    public Date getFechaIn() {
+    public String getFechaIn() {
         return fechaIn;
     }
 
-    public void setFechaIn(Date fechaIn) {
+    public void setFechaIn(String fechaIn) {
         this.fechaIn = fechaIn;
     }
 
-    public Time getHoraIn() {
+    public String getHoraIn() {
         return horaIn;
     }
 
-    public void setHoraIn(Time horaIn) {
+    public void setHoraIn(String horaIn) {
         this.horaIn = horaIn;
     }
 

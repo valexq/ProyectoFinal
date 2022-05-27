@@ -34,10 +34,10 @@ public class Login {
     }
     public void SisEmp(){
         SistemaEmpleado e = new SistemaEmpleado();
-        int p;
+
         System.out.println("Menu Empleado: " +
                            "\n 1. Crear Mensaje" );
-        p = sc.nextInt();
+        int p = sc.nextInt();
         switch (p){
             case 1:
                 e.crearM();
@@ -56,6 +56,7 @@ public class Login {
                 leerUser();
                 leerPass();
                 User usua = c.BuscarU(user);
+                desc = "E";
                 if (Verificar(usua) == true && desc == usua.getDesc() ){
                     SisEmp();
                 }

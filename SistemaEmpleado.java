@@ -1,3 +1,5 @@
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class SistemaEmpleado {
@@ -13,6 +15,10 @@ public class SistemaEmpleado {
         System.out.println("Ingrese la cedula del receptor: ");
         long receptor = sc.nextLong();
         mens.setReceptor(receptor);
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy ");
+        mens.setFechaIn(dtf.format(LocalDateTime.now()));
+        DateTimeFormatter dhr = DateTimeFormatter.ofPattern("HH/mm/ss ");
+        mens.setHoraIn(dhr.format(LocalDateTime.now()));
         System.out.println("Ingrese el asunto del mensaje: ");
         String asunto = sc.next();
         mens.setAsunto(asunto);

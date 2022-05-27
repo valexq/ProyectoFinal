@@ -72,7 +72,7 @@ public class Principal {
         sA.AgregarU(e3);
         sA.AgregarU(e4);
         sA.AgregarU(e5);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss ");
         System.out.println(dtf.format(LocalDateTime.now()));
 
 
