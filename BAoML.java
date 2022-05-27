@@ -14,7 +14,5 @@ public class BAoML {
     public Stack getMensajeL() {
         return mensajeL;
     }
-    public void AgregarM (Mensaje m){
-        bandeja.addFirst(m);
-    }
+
 }
