@@ -4,13 +4,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 public class Principal {
 
-    static Login log= new Login();
+
     static crearUsuario sA = new crearUsuario();
     public static void main(String[] args) {
-        login();
-
-
+        Login log= new Login();
+login();
+log.menuLogin();
     }
+
     private static void login(){
         User e1 = new User();
         e1.setNombre("Carolina");
@@ -72,8 +73,9 @@ public class Principal {
         sA.AgregarU(e3);
         sA.AgregarU(e4);
         sA.AgregarU(e5);
-        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss ");
-        System.out.println(dtf.format(LocalDateTime.now()));
+        sA.toFileE();
+
+
 
 
 

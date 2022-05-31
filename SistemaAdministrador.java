@@ -5,7 +5,7 @@ public class SistemaAdministrador extends   SistemaEmpleado {
     private crearUsuario usuario;
     public SistemaAdministrador(){
         empleados = new DoubleList();
-        usuario = new crearUsuario();
+
     }
     public void  crearUser(){
         usuario.UsuarioNuevo();

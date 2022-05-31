@@ -1,3 +1,7 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+
 public class BAoML {
     private DoubleList bandeja;
     private Stack mensajeL;
@@ -15,7 +19,10 @@ public class BAoML {
         return mensajeL;
     }
     public void agregarbandeja(Mensaje mens){
-
+        bandeja.addFirst(mens);
     }
+
+
+
 
 }

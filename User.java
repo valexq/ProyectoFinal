@@ -141,7 +141,7 @@ public class User {
         this.dir = new Adress(ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken(),ts.nextToken());
 
 
-        System.out.println("User created sucessfully");
+
 
 
     }
@@ -151,7 +151,7 @@ public class User {
         this.pass = ts.nextToken();
         this.desc = ts.nextToken();
 
-        System.out.println("User created sucessfully");
+
 
 
     }
