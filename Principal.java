@@ -73,16 +73,6 @@ log.menuLogin();
         sA.AgregarU(e3);
         sA.AgregarU(e4);
         sA.AgregarU(e5);
-        sA.toFileE();
-
-
-
-
-
-
-
-
-
 
 
     }

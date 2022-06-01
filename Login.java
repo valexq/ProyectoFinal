@@ -3,16 +3,17 @@ import java.util.Scanner;
 public class Login {
     Scanner sc = new Scanner(System.in);
     SistemaAdministrador c ;
-
+    SistemaEmpleado e;
     private long user;
     private String pass;
     private String desc;
 
     public Login(){
         c = new SistemaAdministrador();
+        e = new SistemaEmpleado();
     }
     public  long leerUser(){
-        System.out.println ("Ingrese el Usuario (cedula):");
+        System.out.println ("Enter user's ID:");
         user = sc.nextLong();
         return user;
     }
@@ -36,7 +37,7 @@ public class Login {
         }
     }
   public void SisEmp(){
-        SistemaEmpleado e = new SistemaEmpleado();
+
 
         System.out.println("Menu Empleado: " +
                             "\n 1. Crear Mensaje" +
