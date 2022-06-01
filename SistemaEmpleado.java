@@ -6,18 +6,32 @@ public class SistemaEmpleado {
     Scanner sc = new Scanner(System.in);
     Scanner tc = new Scanner(System.in);
 
+    private long remit;
     private Mensaje mens;
     public SistemaEmpleado(){
         mens = new Mensaje();
 
+
     }
-    public void crearM(){
-        System.out.println("Ingrese la cedula del remitente: ");
-        long remitente = sc.nextLong();
-        mens.setRemitente(remitente);
+
+    public void leerReceptor(){
+        SistemaAdministrador buscador = new SistemaAdministrador();
         System.out.println("Ingrese la cedula del receptor: ");
         long receptor = sc.nextLong();
-        mens.setReceptor(receptor);
+        buscador.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
+        User recep = buscador.BuscarU(receptor);
+        if (recep != null) {
+            mens.setReceptor(receptor);
+
+        }else{
+            System.out.println("Este Usuario no exite en el sistema, reintente por favor ");
+            leerReceptor();
+        }
+    }
+    public void crearM(long remitente){
+        remit = remitente;
+        mens.setRemitente(remit);
+        leerReceptor();
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("dd/MM/yyyy ");
         mens.setFechaIn(dtf.format(LocalDateTime.now()));
         DateTimeFormatter dhr = DateTimeFormatter.ofPattern("HH:mm:ss ");

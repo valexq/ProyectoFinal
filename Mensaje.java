@@ -64,15 +64,15 @@ public class Mensaje {
 
     public String toStringPrintM() {
         return "Mensaje" +
-                "\n Receptor: " + receptor+
                 "\n Remitente: " + remitente +
+                "\n Receptor: " + receptor+
                 "\n Fecha: " + fechaIn +
                 "\n Hora: " + horaIn +
                 "\n Asunto: " + asunto +
                 "\n Mensaje: " + msj ;
     }
     public String toStringM() {
-        return receptor+ remitente + " " + fechaIn + " " + horaIn + " " + asunto + " " + msj ;
+        return  remitente +" " + receptor+ " " + fechaIn + " " + horaIn + " " + asunto + " " + msj ;
     }
 
     @Override

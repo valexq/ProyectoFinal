@@ -16,6 +16,8 @@ public class Login {
         user = sc.nextLong();
         return user;
     }
+
+
     public String leerPass () {
         System.out.println(  "Ingrese la contraseña: " );
         pass = sc.next();
@@ -27,8 +29,6 @@ public class Login {
             return pass;
     }
     public boolean Verificar(User u) {
-
-
         if (user == u.getId() && pass.equals(u.getPass()) ){
             return true;
         }else{
@@ -46,7 +46,7 @@ public class Login {
         int p = sc.nextInt();
         switch (p){
             case 1:
-                e.crearM();
+                e.crearM(user);
             case 2:
 
 
@@ -70,6 +70,10 @@ public class Login {
                     if (Verificar(usua) == true && desc.equals(usua.getDesc())) {
                         SisEmp();
                     }
+                    else{
+                        System.out.println("Su contraseña es incorrecta, vuelva a ingresar por favor ");
+                        menuLogin();
+                    }
                 }else{
                     System.out.println("Usuario o contraseña incorrectas ");
                     menuLogin();
@@ -78,4 +82,5 @@ public class Login {
 
         }
     }
+
 }
