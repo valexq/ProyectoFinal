@@ -5,22 +5,21 @@ import java.util.Scanner;
 public class SistemaEmpleado {
     Scanner sc = new Scanner(System.in);
     Scanner tc = new Scanner(System.in);
-    SistemaAdministrador buscador;
-    BAoML bandeja;
-    Login g;
+    BAoML bandeja ;
     Borradores b;
-    private long remit;
+
+    private static long remit;
     private Mensaje mens;
     public SistemaEmpleado(){
         mens = new Mensaje();
-        buscador  = new SistemaAdministrador();
         bandeja = new BAoML();
-        g  = new Login();
-        b  = new Borradores();
+        b = new Borradores();
+
     }
 
-    public void leerReceptor(){
 
+    public void leerReceptor(){
+        SistemaAdministrador buscador = new SistemaAdministrador();
         System.out.println("Enter receiver's ID: ");
         long receptor = sc.nextLong();
         buscador.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
@@ -66,17 +65,16 @@ public class SistemaEmpleado {
 
     }
     public void enviarM(){
-
+        Login g = new Login();
         bandeja.agregarbandeja(mens);
-
         g.SisEmp();
 
     }
     public void enviarB(){
-
+        Login g = new Login();
         b.agregarB(mens);
-    }
-    public void verBA(){
 
+        g.SisEmp();
     }
+
 }

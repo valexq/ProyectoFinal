@@ -1,3 +1,5 @@
+import java.util.StringTokenizer;
+
 public class Mensaje {
     private long remitente;
     private String fechaIn;
@@ -63,22 +65,36 @@ public class Mensaje {
     }
 
     public String toStringPrintM() {
-        return "Mensaje" +
-                "\n Remitente: " + remitente +
-                "\n Receptor: " + receptor+
-                "\n Fecha: " + fechaIn +
-                "\n Hora: " + horaIn +
-                "\n Asunto: " + asunto +
-                "\n Mensaje: " + msj ;
+        return "\n Remitente: " + remitente +
+                "\n Receiver: " + receptor+
+                "\n Date: " + fechaIn +
+                "\n Hour: " + horaIn +
+                "\n Subject: " + asunto +
+                "\n Message: " + msj ;
     }
     public String toStringM() {
-        return  remitente +" " + receptor+ " " + fechaIn + " " + horaIn + " " + asunto + " " + msj ;
+        return remitente +
+                "\n" + receptor+
+                "\n" + fechaIn +
+                "\n" + horaIn +
+                "\n" + asunto +
+                "\n" + msj ;
     }
+
 
     @Override
 
     public String toString() {
-        return "\n Remitente: " + remitente + "\t\t\t Fecha: " + fechaIn +
-                "\n Asunto: " + asunto ;
+        return "\n Remitente: " + remitente + "\t\t\t Date: " + fechaIn +
+                "\n Subject: " + asunto ;
+    }
+    public void importFileMens(String input) {
+        StringTokenizer ts = new StringTokenizer(input);
+        this.remitente = Long.parseLong(ts.nextToken());
+        this.receptor = Long.parseLong(ts.nextToken());
+        this.fechaIn = String.valueOf(new Date(Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken())));
+        this.horaIn = String.valueOf(new Time(Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken())));
+        this.asunto = ts.nextToken();
+        this.msj = ts.nextToken();
     }
 }

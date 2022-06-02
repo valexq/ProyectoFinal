@@ -4,6 +4,7 @@ public class SistemaAdministrador extends   SistemaEmpleado {
     private DoubleList empleados;
     private crearUsuario usuario;
     public SistemaAdministrador(){
+        super();
         empleados = new DoubleList();
 
     }

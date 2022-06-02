@@ -4,19 +4,24 @@ public class Login {
     Scanner sc = new Scanner(System.in);
     SistemaAdministrador c ;
     SistemaEmpleado e;
+    Borradores b;
     private long user;
     private String pass;
     private String desc;
+    private static long idUser;
 
     public Login(){
         c = new SistemaAdministrador();
-        e = new SistemaEmpleado();
+        e = new SistemaEmpleado( );
+        b = new Borradores();
     }
     public  long leerUser(){
         System.out.println ("Enter user's ID:");
         user = sc.nextLong();
+        idUser = user;
         return user;
     }
+
 
 
     public String leerPass () {
@@ -47,9 +52,10 @@ public class Login {
         int p = sc.nextInt();
         switch (p){
             case 1:
-                e.crearM(user);
+                e.crearM(idUser);
             case 2:
-
+            case 4:
+                verB();
 
         }
     }
@@ -70,6 +76,7 @@ public class Login {
                 if (usua != null) {
                     if (Verificar(usua) == true && desc.equals(usua.getDesc())) {
                         SisEmp();
+
                     }
                     else{
                         System.out.println("Su contraseña es incorrecta, vuelva a ingresar por favor ");
@@ -83,5 +90,10 @@ public class Login {
 
         }
     }
+    public void verB(){
+        String rem = Long.toString(idUser);
 
+        b.import_S("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"B.txt");
+        b.mostrarB();
+    }
 }

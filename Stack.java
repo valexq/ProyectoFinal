@@ -20,5 +20,7 @@ public class Stack {
     public Object top(){
         return data.first().getData();
     }
-
+    public void printListS(){
+        data.printList();
+    }
 }
