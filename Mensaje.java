@@ -3,6 +3,8 @@ import java.io.FileReader;
 import java.util.StringTokenizer;
 
 public class Mensaje {
+
+
     private long remitente;
     private String fechaIn;
     private String horaIn;
@@ -16,6 +18,7 @@ public class Mensaje {
         asunto = null;
         msj = null;
         receptor = 0;
+
     }
 
     public long getRemitente() {
@@ -87,7 +90,8 @@ public class Mensaje {
     @Override
 
     public String toString() {
-        return "\n Receptor: " + receptor + "\t\t\t Date: " + fechaIn +
+        return "ID Message: "+id +
+                "\n Receptor: " + receptor + "\t\t\t Date: " + fechaIn +
                 "\n Subject: " + asunto ;
     }
     public void importFileMens(BufferedReader b1, String str) {

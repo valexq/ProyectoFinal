@@ -1,6 +1,4 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 
 public class BAoML {
     private DoubleList bandeja;
@@ -62,6 +60,49 @@ public class BAoML {
         }
 
     }
+    public void importBA(String archivo){
+        try{
+
+            BufferedReader b1 = new BufferedReader( new FileReader(archivo));
+            String str = b1.readLine();
+            while(str != null){
+                Mensaje m1 = new Mensaje ();
+                m1.importFileMens(b1, str);
+                bandeja.addFirst(m1);
+                str = b1.readLine();
+            }
+            System.out.println("Mensaje importado ");
+            bandeja.printListD();
+            b1.close();
+
+        }catch(Exception e){
+            System.out.println("ERROR");
+        }
+
+    }
+    public void importML(String archivo){
+        try{
+
+            BufferedReader b1 = new BufferedReader( new FileReader(archivo));
+            String str = b1.readLine();
+            Stack temp = new Stack();
+            while(str != null){
+                Mensaje m1 = new Mensaje ();
+                m1.importFileMens(b1, str);
+                temp.Push(m1);
+                str = b1.readLine();
+            }
+            System.out.println("Mensaje importado ");
+            temp.printListS();
+            b1.close();
+
+        }catch(Exception e){
+            System.out.println("ERROR");
+        }
+
+    }
+
+
 
 
 

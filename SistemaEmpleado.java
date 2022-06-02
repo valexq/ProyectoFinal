@@ -7,6 +7,7 @@ public class SistemaEmpleado {
     Scanner tc = new Scanner(System.in);
     BAoML bandeja ;
     Borradores b;
+    private static int Nmens;
 
     private static long remit;
     private Mensaje mens;
@@ -33,6 +34,7 @@ public class SistemaEmpleado {
         }
     }
     public void crearM(long remitente){
+
         remit = remitente;
         mens.setRemitente(remit);
         leerReceptor();
@@ -49,14 +51,16 @@ public class SistemaEmpleado {
         System.out.println(mens.toStringPrintM());
 
         System.out.println("\n 1. Send Message" +
-                           "\n 2. Send to drafts"+
-                           "\n 3. Delete ");
+                "\n 2. Send to drafts"+
+                "\n 3. Delete ");
         int w= sc.nextInt();
         switch (w){
             case 1:
                 enviarM();
+                break;
             case 2:
                 enviarB();
+                break;
             case 3:
 
 

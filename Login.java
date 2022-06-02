@@ -28,7 +28,7 @@ public class Login {
         System.out.println(  "Ingrese la contraseña: " );
         pass = sc.next();
         if ( pass.isEmpty( ) ) {
-           System.out.println ( "Contraseña incorrecta \n Este espacio no puede estar vacio, reintente por favor" );
+            System.out.println ( "Contraseña incorrecta \n Este espacio no puede estar vacio, reintente por favor" );
             return leerPass ();
         }
         else
@@ -41,21 +41,24 @@ public class Login {
             return false;
         }
     }
-  public void SisEmp(){
+    public void SisEmp(){
 
 
         System.out.println("Menu Empleado: " +
-                            "\n 1. Crear Mensaje" +
-                            "\n 2. Ver Bandeja de Entrada" +
-                            "\n 3. Ver Mensajes Leidos" +
-                            "\n 4. Ver Borradores");
+                "\n 1. Crear Mensaje" +
+                "\n 2. Ver Bandeja de Entrada" +
+                "\n 3. Ver Mensajes Leidos" +
+                "\n 4. Ver Borradores");
         int p = sc.nextInt();
         switch (p){
             case 1:
                 e.crearM(idUser);
+                break;
             case 2:
             case 4:
                 verB();
+                SisEmp();
+                break;
 
         }
     }
@@ -75,6 +78,7 @@ public class Login {
         switch (p){
             case 1:
                 e.crearM(idUser);
+                break;
             case 2:
 
 
@@ -84,13 +88,13 @@ public class Login {
 
         }
     }
-   public void menuLogin(){
+    public void menuLogin(){
         int a;
         System.out.println( "Choose type of user: " +
-                            "\n 1. Employee" +
-                            "\n 2. Administrator");
+                "\n 1. Employee" +
+                "\n 2. Administrator");
         a = sc.nextInt();
-       c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
+        c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
 
         switch (a){
             case 1:
