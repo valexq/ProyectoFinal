@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.util.StringTokenizer;
 
 public class Mensaje {
@@ -85,16 +87,21 @@ public class Mensaje {
     @Override
 
     public String toString() {
-        return "\n Remitente: " + remitente + "\t\t\t Date: " + fechaIn +
+        return "\n Receptor: " + receptor + "\t\t\t Date: " + fechaIn +
                 "\n Subject: " + asunto ;
     }
-    public void importFileMens(String input) {
-        StringTokenizer ts = new StringTokenizer(input);
-        this.remitente = Long.parseLong(ts.nextToken());
-        this.receptor = Long.parseLong(ts.nextToken());
-        this.fechaIn = String.valueOf(new Date(Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken())));
-        this.horaIn = String.valueOf(new Time(Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken()), Short.valueOf(ts.nextToken())));
-        this.asunto = ts.nextToken();
-        this.msj = ts.nextToken();
+    public void importFileMens(BufferedReader b1, String str) {
+       try {
+                   this.remitente = Long.parseLong(str);
+                   this.receptor = Long.parseLong(b1.readLine());
+                   this.fechaIn = b1.readLine();
+                   this.horaIn = b1.readLine();
+                   this.asunto = b1.readLine();
+                   this.msj = b1.readLine();
+
+       }catch(Exception e){
+        System.out.println("ERROR");
     }
+
+}
 }

@@ -42,7 +42,7 @@ public class Borradores {
             Stack temp = new Stack();
             while(str != null){
                 Mensaje m1 = new Mensaje ();
-                m1.importFileMens(str);
+                m1.importFileMens(b1, str);
                 temp.Push(m1);
                 str = b1.readLine();
             }

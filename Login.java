@@ -59,11 +59,36 @@ public class Login {
 
         }
     }
+    public void SistAdmin(){
+        System.out.println("Menu Administrator: " +
+                "\n Choose an option: " +
+                "\n 1. Create message" +
+                "\n 2. View inbox" +
+                "\n 3. View Read Messages" +
+                "\n 4. View Drafts" +
+                "\n 5. Create user" +
+                "\n 6. Search user" +
+                "\n 7. Delete user" +
+                "\n 8. Change user's password"
+        );
+        int p = sc.nextInt();
+        switch (p){
+            case 1:
+                e.crearM(idUser);
+            case 2:
+
+
+
+
+
+
+        }
+    }
    public void menuLogin(){
         int a;
-        System.out.println( "Menu: " +
-                            "\n 1. Empleado" +
-                            "\n 2. Administrador");
+        System.out.println( "Choose type of user: " +
+                            "\n 1. Employee" +
+                            "\n 2. Administrator");
         a = sc.nextInt();
        c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
 
@@ -86,6 +111,24 @@ public class Login {
                     System.out.println("Usuario o contraseña incorrectas ");
                     menuLogin();
                 }
+            case 2:
+                leerUser();
+                leerPass();
+                User usua2 = c.BuscarU(user);
+                desc = "A";
+                if (usua2!= null) {
+                    if (Verificar(usua2) == true && desc.equals(usua2.getDesc())) {
+                        SistAdmin();
+                    }
+                    else{
+                        System.out.println("Your credencial is not able");
+                        menuLogin();
+                    }
+                }else{
+                    System.out.println("User or password are incorrect ");
+                    menuLogin();
+                }
+
 
 
         }
