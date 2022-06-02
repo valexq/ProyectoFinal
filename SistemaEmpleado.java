@@ -12,7 +12,7 @@ public class SistemaEmpleado {
     private static long remit;
     private Mensaje mens;
     public SistemaEmpleado(){
-        mens = new Mensaje();
+
         bandeja = new BAoML();
         b = new Borradores();
 
@@ -34,6 +34,7 @@ public class SistemaEmpleado {
         }
     }
     public void crearM(long remitente){
+        mens = new Mensaje();
 
         remit = remitente;
         mens.setRemitente(remit);

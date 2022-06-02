@@ -5,15 +5,19 @@ public class Login {
     SistemaAdministrador c ;
     SistemaEmpleado e;
     Borradores b;
+    BAoML m;
     private long user;
     private String pass;
     private String desc;
     private static long idUser;
 
+
     public Login(){
         c = new SistemaAdministrador();
         e = new SistemaEmpleado( );
         b = new Borradores();
+        m = new BAoML();
+
     }
     public  long leerUser(){
         System.out.println ("Enter user's ID:");
@@ -44,17 +48,26 @@ public class Login {
     public void SisEmp(){
 
 
-        System.out.println("Menu Empleado: " +
-                "\n 1. Crear Mensaje" +
-                "\n 2. Ver Bandeja de Entrada" +
-                "\n 3. Ver Mensajes Leidos" +
-                "\n 4. Ver Borradores");
+        System.out.println("Menu Employee: " +
+                "\n Choose an option: " +
+                "\n 1. Create message" +
+                "\n 2. View inbox" +
+                "\n 3. View Read Messages" +
+                "\n 4. View Drafts" );
         int p = sc.nextInt();
         switch (p){
             case 1:
+
                 e.crearM(idUser);
                 break;
             case 2:
+                verBA();
+                SisEmp();
+                break;
+            case 3:
+                verML();
+                SisEmp();
+                break;
             case 4:
                 verB();
                 SisEmp();
@@ -136,6 +149,18 @@ public class Login {
 
 
         }
+    }
+    public void verBA(){
+        String rem = Long.toString(idUser);
+
+        m.importBA("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"BA.txt");
+
+    }
+    public void verML(){
+        String rem = Long.toString(idUser);
+
+        m.importML("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"B.txt");
+        m.mostrarML();
     }
     public void verB(){
         String rem = Long.toString(idUser);

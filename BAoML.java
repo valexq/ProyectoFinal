@@ -9,13 +9,7 @@ public class BAoML {
         mensajeL =new Stack();
     }
 
-    public DoubleList getBandeja() {
-        return bandeja;
-    }
 
-    public Stack getMensajeL() {
-        return mensajeL;
-    }
     public  void agregarbandeja(Mensaje mens){
 
         bandeja.addFirst(mens);
@@ -25,6 +19,12 @@ public class BAoML {
 
         String receptor = Long.toString(mens.getReceptor());
         toFileBA(receptor);
+    }
+    public void mostrarBA(){
+        bandeja.printListD();
+    }
+    public void mostrarML(){
+        mensajeL.printListS();
     }
     public void toFileBA(String receptor) {
         try {
@@ -65,21 +65,24 @@ public class BAoML {
 
             BufferedReader b1 = new BufferedReader( new FileReader(archivo));
             String str = b1.readLine();
+            DoubleList temp = new DoubleList();
             while(str != null){
                 Mensaje m1 = new Mensaje ();
                 m1.importFileMens(b1, str);
-                bandeja.addFirst(m1);
+                temp.addFirst(m1);
                 str = b1.readLine();
             }
             System.out.println("Mensaje importado ");
-            bandeja.printListD();
+            temp.printListD();
             b1.close();
 
         }catch(Exception e){
             System.out.println("ERROR");
         }
 
-    }
+
+
+}
     public void importML(String archivo){
         try{
 

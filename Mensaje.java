@@ -11,6 +11,7 @@ public class Mensaje {
     private String asunto;
     private String msj;
     private long receptor;
+
     public Mensaje(){
         remitente = 0;
         fechaIn = null;
@@ -90,7 +91,7 @@ public class Mensaje {
     @Override
 
     public String toString() {
-        return "ID Message: "+id +
+        return
                 "\n Receptor: " + receptor + "\t\t\t Date: " + fechaIn +
                 "\n Subject: " + asunto ;
     }
