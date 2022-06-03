@@ -13,19 +13,38 @@ public class BAoML {
     public  void agregarbandeja(Mensaje mens){
 
         bandeja.addFirst(mens);
-        mandarToFile(mens);
+        mandarToFileBA(mens);
     }
-    public void mandarToFile(Mensaje mens){
+
+    public void mandarToFileBA(Mensaje mens){
 
         String receptor = Long.toString(mens.getReceptor());
         toFileBA(receptor);
     }
-    public void mostrarBA(){
-        bandeja.printListD();
+    public void mandarToFileML(Mensaje mens){
+
+        String receptor = Long.toString(mens.getReceptor());
+        toFileML(receptor);
     }
+    public DoubleNode verMensaje (int i ){
+        DoubleNode recorrer = bandeja.First();
+        if (bandeja != null) {
+            for (int j = 0; j < i-1; j++) {
+                recorrer = recorrer.getNext();
+            }
+        }
+        DoubleNode temp = recorrer;
+        bandeja.removeM(recorrer);
+        Mensaje aux = (Mensaje) recorrer.getData();
+        mensajeL.Push(aux);
+        mandarToFileML(aux);
+        return temp;
+    }
+
     public void mostrarML(){
         mensajeL.printListS();
     }
+
     public void toFileBA(String receptor) {
         try {
 
@@ -43,10 +62,10 @@ public class BAoML {
         }
 
     }
-    public void toFileML(String receptor) {
+    public void toFileML(String remitente) {
         try {
 
-            BufferedWriter p = new BufferedWriter(new FileWriter(receptor +"ML.txt", true));
+            BufferedWriter p = new BufferedWriter(new FileWriter(remitente +"ML.txt", true));
             Stack temp;
             temp = mensajeL;
             while (!(mensajeL.isEmpty())) {
@@ -65,23 +84,19 @@ public class BAoML {
 
             BufferedReader b1 = new BufferedReader( new FileReader(archivo));
             String str = b1.readLine();
-            DoubleList temp = new DoubleList();
+
             while(str != null){
                 Mensaje m1 = new Mensaje ();
                 m1.importFileMens(b1, str);
-                temp.addFirst(m1);
+                bandeja.addFirst(m1);
                 str = b1.readLine();
             }
             System.out.println("Mensaje importado ");
-            temp.printListD();
+            bandeja.printListD();
             b1.close();
-
         }catch(Exception e){
             System.out.println("ERROR");
         }
-
-
-
 }
     public void importML(String archivo){
         try{
@@ -98,11 +113,9 @@ public class BAoML {
             System.out.println("Mensaje importado ");
             temp.printListS();
             b1.close();
-
         }catch(Exception e){
             System.out.println("ERROR");
         }
-
     }
 
 

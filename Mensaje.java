@@ -11,6 +11,7 @@ public class Mensaje {
     private String asunto;
     private String msj;
     private long receptor;
+    private int Nm;
 
     public Mensaje(){
         remitente = 0;
@@ -19,7 +20,7 @@ public class Mensaje {
         asunto = null;
         msj = null;
         receptor = 0;
-
+        Nm = 0;
     }
 
     public long getRemitente() {
@@ -91,22 +92,23 @@ public class Mensaje {
     @Override
 
     public String toString() {
+
         return
                 "\n Receptor: " + receptor + "\t\t\t Date: " + fechaIn +
-                "\n Subject: " + asunto ;
+                        "\n Subject: " + asunto ;
     }
     public void importFileMens(BufferedReader b1, String str) {
-       try {
-                   this.remitente = Long.parseLong(str);
-                   this.receptor = Long.parseLong(b1.readLine());
-                   this.fechaIn = b1.readLine();
-                   this.horaIn = b1.readLine();
-                   this.asunto = b1.readLine();
-                   this.msj = b1.readLine();
+        try {
+            this.remitente = Long.parseLong(str);
+            this.receptor = Long.parseLong(b1.readLine());
+            this.fechaIn = b1.readLine();
+            this.horaIn = b1.readLine();
+            this.asunto = b1.readLine();
+            this.msj = b1.readLine();
 
-       }catch(Exception e){
-        System.out.println("ERROR");
+        }catch(Exception e){
+            System.out.println("ERROR");
+        }
+
     }
-
-}
 }

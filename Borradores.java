@@ -34,7 +34,7 @@ public class Borradores {
         }
 
     }
-    public void import_S(String archivo){
+    public void importB(String archivo){
         try{
 
             BufferedReader b1 = new BufferedReader( new FileReader(archivo));

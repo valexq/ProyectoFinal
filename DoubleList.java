@@ -4,11 +4,13 @@ public class DoubleList {
     private DoubleNode head;
     private DoubleNode tail;
     private int size;
+    private int N;
 
     public DoubleList() {
         head = null;
         tail = null;
         size = 0;
+        N =1;
 
     }
 
@@ -113,6 +115,27 @@ public class DoubleList {
         }
         return null;
     }
+    public Object removeM (DoubleNode n){
+        if (n == head){
+            return removeFirst();
+        }
+        else{
+            if(n==tail){
+                return removeLast();
+            }
+            else{
+                Object temp_data = n.getData();
+                DoubleNode temp_prev = n.getPrev();
+                DoubleNode temp_next = n.getNext();
+                temp_prev.setNext(temp_next);
+                temp_next.setPrev(temp_prev);
+                n.setNext(null);
+                n.setPrev(null);
+                size--;
+                return temp_data;
+            }
+        }
+    }
     public void addAfter(DoubleNode n, Object a){
         if (n !=tail){
             DoubleNode m = new DoubleNode(a);
@@ -130,6 +153,7 @@ public class DoubleList {
     public void printListD(){
         DoubleNode recorrer = head;
         while(recorrer != null){
+            System.out.print(N++);
             System.out.println(recorrer.getData());
             System.out.println();
             recorrer = recorrer.getNext();

@@ -62,6 +62,7 @@ public class Login {
                 break;
             case 2:
                 verBA();
+                verM();
                 SisEmp();
                 break;
             case 3:
@@ -75,6 +76,14 @@ public class Login {
 
         }
     }
+    public void verM (){
+        System.out.println("Ingrese el indice del mensaje que quiere ver: ");
+        int i = sc.nextInt();
+        DoubleNode temp = m.verMensaje(i);
+        Mensaje men = (Mensaje) temp.getData();
+        System.out.println(men.toStringPrintM());
+    }
+
     public void SistAdmin(){
         System.out.println("Menu Administrator: " +
                 "\n Choose an option: " +
@@ -159,13 +168,13 @@ public class Login {
     public void verML(){
         String rem = Long.toString(idUser);
 
-        m.importML("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"B.txt");
+        m.importML("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"ML.txt");
         m.mostrarML();
     }
     public void verB(){
         String rem = Long.toString(idUser);
 
-        b.import_S("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"B.txt");
+        b.importB("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"B.txt");
         b.mostrarB();
     }
 }

@@ -8,9 +8,9 @@ public class Principal {
     static crearUsuario sA = new crearUsuario();
     public static void main(String[] args) {
         Login log= new Login();
-login();
+        //login();
 
-log.menuLogin();
+        log.menuLogin();
     }
 
     private static void login(){

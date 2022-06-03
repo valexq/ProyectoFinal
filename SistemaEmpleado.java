@@ -7,7 +7,7 @@ public class SistemaEmpleado {
     Scanner tc = new Scanner(System.in);
     BAoML bandeja ;
     Borradores b;
-    private static int Nmens;
+
 
     private static long remit;
     private Mensaje mens;
@@ -33,9 +33,9 @@ public class SistemaEmpleado {
             leerReceptor();
         }
     }
+
     public void crearM(long remitente){
         mens = new Mensaje();
-
         remit = remitente;
         mens.setRemitente(remit);
         leerReceptor();
