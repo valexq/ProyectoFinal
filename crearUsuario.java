@@ -155,7 +155,7 @@ public class crearUsuario {
             return desc;
     }
     public void UsuarioNuevo(){
-        usuario.setNombre(leerNombre());
+        usuario.setNombre("\n"+leerNombre());
         usuario.setId(leerId());
         usuario.setFecha_nac(leerFecha());
         usuario.setCiudad_nac(leerCiudad_nac());
@@ -168,7 +168,7 @@ public class crearUsuario {
     }
 public void agregarU(){
         a.AgregarU(usuario);
-        //a.toFileER();
+    a.toFileE();
 }
 
 

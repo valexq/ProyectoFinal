@@ -8,7 +8,22 @@ public class BAoML {
         bandeja = new DoubleList();
         mensajeL =new Stack();
     }
+    public boolean isEmptyBA() {
+        if (bandeja.isEmpty()){
+            return true;
+        }else{
+            return false;
+        }
 
+    }
+    public boolean isEmptyML() {
+        if (mensajeL.isEmpty()){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
 
     public  void agregarbandeja(Mensaje mens){
 
@@ -50,7 +65,9 @@ public class BAoML {
     public void mostrarML(){
         mensajeL.printListS();
     }
-
+    public void mostrarBA(){
+        bandeja.printListD();
+    }
     public void toFileBA(String receptor) {
         try {
 

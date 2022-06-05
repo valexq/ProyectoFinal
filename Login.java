@@ -64,7 +64,7 @@ public class Login {
     public void SisEmp(){
 
 
-        System.out.println("Menu Employee: " +
+        System.out.println("\n Menu Employee: " +
                 "\n Choose an option: " +
                 "\n 1. Create message" +
                 "\n 2. View inbox" +
@@ -92,7 +92,6 @@ public class Login {
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
-                        //falta while
                 }
                 break;
             case 3:
@@ -101,28 +100,37 @@ public class Login {
                 break;
             case 4:
                 verB();
-                System.out.println("1. Ver primer mensaje "+
+                System.out.println("\n1. Ver primer mensaje "+
                         "\n2. Enviar primer mensaje  "+
                         "\n3. Eliminar primer mensaje ");
                 int o = sc.nextInt();
                 switch (o){
                     case 1:
-                        b.mostrarPrimerM();
+                        Mensaje temp =  b.mostrarPrimerM();
+                        System.out.println(temp.toStringPrintM());
                         SisEmp();
                         break;
                     case 2:
+                        Mensaje men=  b.mostrarPrimerM();
+                        e.enviarMensaje(men);
+
+                        SisEmp();
+                        break;
+                    case 3:
+                        b.eliminar();
                         SisEmp();
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
-                        //FALTA WHILE
+                        //falta while
                 }
                 break;
             case 5:
                 menuLogin();
             default:
                 System.out.println("Opcion incorrecta");
-//falta while
+                SisEmp();
+
         }
     }
     public void verM (){
@@ -134,7 +142,7 @@ public class Login {
     }
 
     public void SistAdmin(){
-        System.out.println("Menu Administrator: " +
+        System.out.println("\n Menu Administrator: " +
                 "\n Choose an option: " +
                 "\n 1. Create message" +
                 "\n 2. View inbox" +
@@ -143,7 +151,8 @@ public class Login {
                 "\n 5. Create user" +
                 "\n 6. Search user" +
                 "\n 7. Delete user" +
-                "\n 8. Change user's password"
+                "\n 8. Change user's password"+
+                "\n 9. cerrar sesion"
         );
         int p = sc.nextInt();
         switch (p){
@@ -166,7 +175,7 @@ public class Login {
                         break;
                     default:
                         System.out.println("Opcion incorrecta");
-                        //falta while
+                        SisEmp();
                 }
 
 
@@ -195,13 +204,32 @@ public class Login {
                     case 3:
                         b.eliminar();
                         SistAdmin();
+                        break;
                     default:
                         System.out.println("Opcion incorrecta");
-                        //falta while
+                        SistAdmin();
                 }
             case 5:
                 u.UsuarioNuevo();
-
+            case 6:
+                System.out.println("Ingrese el ID del usuario que desea buscar:");
+                int w = sc.nextInt();
+                System.out.println(c.BuscarU(w));
+                SistAdmin();
+            case 7:
+                System.out.println("Ingrese el ID del usuario que desea eliminar:");
+                int z = sc.nextInt();
+                c.EliminarU(z);
+                SistAdmin();
+            case 8:
+                PreguntarU();
+                System.out.println("Usuario eliminado exitosamente");
+                SistAdmin();
+            case 9:
+                menuLogin();
+            default:
+                System.out.println("Opcion incorrecta");
+                SistAdmin();
         }
     }
 
@@ -250,27 +278,35 @@ public class Login {
                     System.out.println("User or password are incorrect ");
                     menuLogin();
                 }
-
+            default:
+                System.out.println("Opcion incorrecta");
+                menuLogin();
 
 
         }
     }
     public void verBA(){
         String rem = Long.toString(idUser);
-
-        m.importBA("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"BA.txt");
-
+        if (m.isEmptyBA()) {
+            m.importBA("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\" + rem + "BA.txt");
+        }else{
+            m.mostrarBA();
+        }
     }
     public void verML(){
         String rem = Long.toString(idUser);
-
-        m.importML("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"ML.txt");
-        m.mostrarML();
+        if (m.isEmptyML()) {
+            m.importML("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\" + rem + "ML.txt");
+        }else {
+            m.mostrarML();
+        }
     }
     public void verB(){
         String rem = Long.toString(idUser);
-
-        b.importB("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\"+rem+"B.txt");
-        b.mostrarB();
+        if (b.isEmptyB()) {
+            b.importB("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\" + rem + "B.txt");
+        }else {
+            b.mostrarB();
+        }
     }
 }

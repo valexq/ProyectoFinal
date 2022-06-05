@@ -2,24 +2,19 @@ import javax.swing.*;
 import java.io.*;
 public class SistemaAdministrador extends   SistemaEmpleado {
     private DoubleList empleados;
-    private crearUsuario usuario;
+
     public SistemaAdministrador(){
         super();
         empleados = new DoubleList();
 
     }
-    public void  crearUser(){
-        usuario.UsuarioNuevo();
 
-    }
     public void CambiarPass(long id, String p){
         User temp = BuscarU(id);
         temp.setPass(p);
         System.out.println("Password changed succesfully");
     }
-    public User getUser(){
-        return (User)empleados.First().getData();
-    }
+
     public void AgregarU(User u){
         empleados.addFirst(u);
     }
@@ -37,7 +32,11 @@ public class SistemaAdministrador extends   SistemaEmpleado {
              return (User)temp.getData();
          }
      }
+    public void EliminarU(long id){
 
+        empleados.remove(id);
+        toFileE();
+    }
 
     public void toFileE() {
         try {
@@ -61,6 +60,8 @@ public class SistemaAdministrador extends   SistemaEmpleado {
         }
 
     }
+
+
     public void importUser(String emp, String pass){
         try{
 

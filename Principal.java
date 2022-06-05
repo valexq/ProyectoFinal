@@ -6,9 +6,9 @@ public class Principal {
 
     public static void main(String[] args) {
         Login log= new Login();
-        login();
+        //login();
 
-        //log.menuLogin();
+        log.menuLogin();
     }
     private static void login(){
         User e1 = new User();

@@ -94,6 +94,8 @@ public class SistemaEmpleado {
     }
     public void enviarMensaje( Mensaje m){
         bandeja.agregarbandeja(m);
+        b.eliminar();
+
     }
     public void enviarB(){
 
