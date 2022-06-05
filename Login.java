@@ -112,7 +112,7 @@ public class Login {
                         break;
                     case 2:
                         Mensaje men=  b.mostrarPrimerM();
-                        e.enviarMensaje(men);
+                        enviarMensaje(men);
 
                         SisEmp();
                         break;
@@ -198,7 +198,7 @@ public class Login {
                         break;
                     case 2:
                         Mensaje men=  b.mostrarPrimerM();
-                        e.enviarMensaje(men);
+                        enviarMensaje(men);
                         SistAdmin();
                         break;
                     case 3:
@@ -208,6 +208,7 @@ public class Login {
                     default:
                         System.out.println("Opcion incorrecta");
                         SistAdmin();
+                        break;
                 }
             case 5:
                 u.UsuarioNuevo();
@@ -231,6 +232,11 @@ public class Login {
                 System.out.println("Opcion incorrecta");
                 SistAdmin();
         }
+    }
+    public void enviarMensaje( Mensaje me){
+        m.agregarbandeja(me);
+        b.eliminar();
+
     }
 
 

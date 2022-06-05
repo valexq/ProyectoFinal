@@ -92,11 +92,7 @@ public class SistemaEmpleado {
     public void enviarM(){
         bandeja.agregarbandeja(mens);
     }
-    public void enviarMensaje( Mensaje m){
-        bandeja.agregarbandeja(m);
-        b.eliminar();
 
-    }
     public void enviarB(){
 
         b.agregarB(mens);
