@@ -6,10 +6,12 @@ public class Login {
     SistemaEmpleado e;
     Borradores b;
     BAoML m;
+    crearUsuario u;
     private long user;
     private String pass;
     private String desc;
     private static long idUser;
+
 
 
     public Login(){
@@ -17,7 +19,7 @@ public class Login {
         e = new SistemaEmpleado( );
         b = new Borradores();
         m = new BAoML();
-
+        u = new crearUsuario();
     }
     public  long leerUser(){
         System.out.println ("Enter user's ID:");
@@ -45,6 +47,20 @@ public class Login {
             return false;
         }
     }
+    private void PreguntarU(){
+        System.out.print("Enter user's id to change: ");
+        long id = sc.nextLong();
+        User temp = c.BuscarU(id);
+        if(temp== null){
+            System.out.println("User not founded");
+            PreguntarU();
+        }else{
+            System.out.print("Enter user's password to change: ");
+            String newpass = sc.next();
+            c.CambiarPass(id, newpass);
+            c.toFileE();
+        }
+    }
     public void SisEmp(){
 
 
@@ -53,17 +69,31 @@ public class Login {
                 "\n 1. Create message" +
                 "\n 2. View inbox" +
                 "\n 3. View Read Messages" +
-                "\n 4. View Drafts" );
+                "\n 4. View Drafts"+
+                "\n 5. cerrar sesion");
         int p = sc.nextInt();
         switch (p){
             case 1:
 
-                e.crearM(idUser);
+                e.crearM(idUser, "E");
                 break;
             case 2:
                 verBA();
-                verM();
-                SisEmp();
+                System.out.println("1. Ver mensaje"
+                        + "\n2. Volver al menu anterior ");
+                int t = sc.nextInt();
+                switch (t){
+                    case 1:
+                        verM();
+                        SisEmp();
+                        break;
+                    case 2:
+                        SisEmp();
+                        break;
+                    default:
+                        System.out.println("Opcion incorrecta");
+                        //falta while
+                }
                 break;
             case 3:
                 verML();
@@ -71,9 +101,28 @@ public class Login {
                 break;
             case 4:
                 verB();
-                SisEmp();
+                System.out.println("1. Ver primer mensaje "+
+                        "\n2. Enviar primer mensaje  "+
+                        "\n3. Eliminar primer mensaje ");
+                int o = sc.nextInt();
+                switch (o){
+                    case 1:
+                        b.mostrarPrimerM();
+                        SisEmp();
+                        break;
+                    case 2:
+                        SisEmp();
+                        break;
+                    default:
+                        System.out.println("Opcion incorrecta");
+                        //FALTA WHILE
+                }
                 break;
-
+            case 5:
+                menuLogin();
+            default:
+                System.out.println("Opcion incorrecta");
+//falta while
         }
     }
     public void verM (){
@@ -99,17 +148,64 @@ public class Login {
         int p = sc.nextInt();
         switch (p){
             case 1:
-                e.crearM(idUser);
+
+                e.crearM(idUser, "A");
                 break;
             case 2:
+                verBA();
+                System.out.println("1. Ver mensaje"
+                + "\n2. Volver al menu anterior ");
+                int t = sc.nextInt();
+                switch (t){
+                    case 1:
+                        verM();
+                        SistAdmin();
+                        break;
+                    case 2:
+                        SistAdmin();
+                        break;
+                    default:
+                        System.out.println("Opcion incorrecta");
+                        //falta while
+                }
 
 
-
-
-
+                break;
+            case 3:
+                verML();
+                SistAdmin();
+                break;
+            case 4:
+                verB();
+                System.out.println("1. Ver primer mensaje "+
+                                   "\n2. Enviar primer mensaje  "+
+                                   "\n3. Eliminar primer mensaje ");
+                int o = sc.nextInt();
+                switch (o){
+                    case 1:
+                        Mensaje temp =  b.mostrarPrimerM();
+                        System.out.println(temp.toStringPrintM());
+                        SistAdmin();
+                        break;
+                    case 2:
+                        Mensaje men=  b.mostrarPrimerM();
+                        e.enviarMensaje(men);
+                        SistAdmin();
+                        break;
+                    case 3:
+                        b.eliminar();
+                        SistAdmin();
+                    default:
+                        System.out.println("Opcion incorrecta");
+                        //falta while
+                }
+            case 5:
+                u.UsuarioNuevo();
 
         }
     }
+
+
     public void menuLogin(){
         int a;
         System.out.println( "Choose type of user: " +

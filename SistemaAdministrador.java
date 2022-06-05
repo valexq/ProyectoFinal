@@ -12,23 +12,18 @@ public class SistemaAdministrador extends   SistemaEmpleado {
         usuario.UsuarioNuevo();
 
     }
+    public void CambiarPass(long id, String p){
+        User temp = BuscarU(id);
+        temp.setPass(p);
+        System.out.println("Password changed succesfully");
+    }
     public User getUser(){
         return (User)empleados.First().getData();
     }
     public void AgregarU(User u){
         empleados.addFirst(u);
     }
-    /* public DoubleNode findRecursive(long id, DoubleNode v){
-         if (((User)v.getData()).getId() == id ){
-             return v;
-         }
-         else {
-             return findRecursive(id, v.getNext());
-         }
-     }
-     public DoubleNode find(long id){
-         return findRecursive(id, empleados.First());
-   }*/
+
      public User BuscarU(long id){
          DoubleNode temp= empleados.First();
          while(temp != null && ((User)temp.getData()).getId() != id){
@@ -42,11 +37,7 @@ public class SistemaAdministrador extends   SistemaEmpleado {
              return (User)temp.getData();
          }
      }
-    public User EliminarU (long id){
 
-
-        return (User)empleados.remove(id);
-    }
 
     public void toFileE() {
         try {
@@ -100,4 +91,6 @@ public class SistemaAdministrador extends   SistemaEmpleado {
         empleados.printListD();
 
     }
+
+
 }

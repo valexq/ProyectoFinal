@@ -4,15 +4,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 public class Principal {
 
-
-    static crearUsuario sA = new crearUsuario();
     public static void main(String[] args) {
         Login log= new Login();
-        //login();
+        login();
 
-        log.menuLogin();
+        //log.menuLogin();
     }
-
     private static void login(){
         User e1 = new User();
         e1.setNombre("Carolina");
@@ -74,7 +71,9 @@ public class Principal {
         sA.AgregarU(e3);
         sA.AgregarU(e4);
         sA.AgregarU(e5);
-
+        sA.toFileE();
 
     }
+
+
 }

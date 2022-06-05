@@ -34,7 +34,8 @@ public class SistemaEmpleado {
         }
     }
 
-    public void crearM(long remitente){
+    public void crearM(long remitente, String desc){
+        Login g = new Login();
         mens = new Mensaje();
         remit = remitente;
         mens.setRemitente(remit);
@@ -52,17 +53,36 @@ public class SistemaEmpleado {
         System.out.println(mens.toStringPrintM());
 
         System.out.println("\n 1. Send Message" +
-                "\n 2. Send to drafts"+
-                "\n 3. Delete ");
+                           "\n 2. Send to drafts"+
+                           "\n 3. Delete ");
         int w= sc.nextInt();
         switch (w){
             case 1:
                 enviarM();
+                if (desc.equals("E")){
+                    g.SisEmp();
+                }else if(desc.equals("A")){
+                    g.SistAdmin();
+                }
                 break;
             case 2:
                 enviarB();
+                if (desc.equals("E")){
+                    g.SisEmp();
+                }else if(desc.equals("A")){
+                    g.SistAdmin();
+                }
                 break;
             case 3:
+                System.out.println("Mensaje eliminado");
+                if (desc.equals("E")){
+                    g.SisEmp();
+                }else if(desc.equals("A")){
+                    g.SistAdmin();
+                }
+                break;
+            default:
+                System.out.println("Opcion incorrecta");
 
 
         }
@@ -70,16 +90,15 @@ public class SistemaEmpleado {
 
     }
     public void enviarM(){
-        Login g = new Login();
         bandeja.agregarbandeja(mens);
-        g.SisEmp();
-
+    }
+    public void enviarMensaje( Mensaje m){
+        bandeja.agregarbandeja(m);
     }
     public void enviarB(){
-        Login g = new Login();
+
         b.agregarB(mens);
 
-        g.SisEmp();
     }
 
 }

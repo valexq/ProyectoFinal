@@ -13,6 +13,14 @@ public class Borradores {
     public void mostrarB(){
         borrador.printListS();
     }
+    public Mensaje mostrarPrimerM (){
+        Mensaje temp = (Mensaje) borrador.top();
+        return temp;
+
+    }
+    public void eliminar (){
+        borrador.pop();
+    }
     public void mandarToFile(Mensaje mens){
 
         String remitente = Long.toString(mens.getRemitente());

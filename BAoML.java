@@ -21,6 +21,11 @@ public class BAoML {
         String receptor = Long.toString(mens.getReceptor());
         toFileBA(receptor);
     }
+    public void mandarToFileBAR(Mensaje mens){
+
+        String receptor = Long.toString(mens.getReceptor());
+        toFileBAR(receptor);
+    }
     public void mandarToFileML(Mensaje mens){
 
         String receptor = Long.toString(mens.getReceptor());
@@ -38,6 +43,7 @@ public class BAoML {
         Mensaje aux = (Mensaje) recorrer.getData();
         mensajeL.Push(aux);
         mandarToFileML(aux);
+        mandarToFileBAR(aux);
         return temp;
     }
 
@@ -49,6 +55,23 @@ public class BAoML {
         try {
 
             BufferedWriter p = new BufferedWriter(new FileWriter(receptor +"BA.txt", true));
+            DoubleList temp;
+            temp = bandeja;
+            while (!(bandeja.isEmpty())) {
+                Mensaje aux = (Mensaje)temp.removeFirst();
+                p.write(( aux).toStringM());
+                p.newLine();
+            }
+            p.close();
+        } catch (IOException e) {
+            System.out.println("ERROR");
+        }
+
+    }
+    public void toFileBAR(String receptor) {
+        try {
+
+            BufferedWriter p = new BufferedWriter(new FileWriter(receptor +"BA.txt", false));
             DoubleList temp;
             temp = bandeja;
             while (!(bandeja.isEmpty())) {
@@ -103,15 +126,15 @@ public class BAoML {
 
             BufferedReader b1 = new BufferedReader( new FileReader(archivo));
             String str = b1.readLine();
-            Stack temp = new Stack();
+
             while(str != null){
                 Mensaje m1 = new Mensaje ();
                 m1.importFileMens(b1, str);
-                temp.Push(m1);
+                mensajeL.Push(m1);
                 str = b1.readLine();
             }
             System.out.println("Mensaje importado ");
-            temp.printListS();
+            mensajeL.printListS();
             b1.close();
         }catch(Exception e){
             System.out.println("ERROR");

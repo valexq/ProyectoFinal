@@ -4,13 +4,13 @@ public class DoubleList {
     private DoubleNode head;
     private DoubleNode tail;
     private int size;
-    private int N;
+
 
     public DoubleList() {
         head = null;
         tail = null;
         size = 0;
-        N =1;
+
 
     }
 
@@ -151,9 +151,10 @@ public class DoubleList {
         }
     }
     public void printListD(){
+        int n = 0;
         DoubleNode recorrer = head;
         while(recorrer != null){
-            System.out.print(N++);
+           System.out.print(++n);
             System.out.println(recorrer.getData());
             System.out.println();
             recorrer = recorrer.getNext();
