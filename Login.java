@@ -21,6 +21,61 @@ public class Login {
         m = new BAoML();
         u = new crearUsuario();
     }
+    public void menuLogin(){
+        int a;
+
+        System.out.println("WELCOME TO THE ELECTRONIC MESSAGING SYSTEM" +
+                "\nChoose type of user: " +
+                "\n1. Employee" +
+                "\n2. Administrator"+
+                "\n3. End program ");
+        a = sc.nextInt();
+        c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
+
+        switch (a){
+            case 1:
+                leerUser();
+                leerPass();
+                User usua = c.BuscarU(user);
+                desc = "E";
+                if (usua != null) {
+                    if (Verificar(usua) == true && desc.equals(usua.getDesc())) {
+                        SisEmp();
+
+                    }
+                    else{
+                        System.out.println("Your password is incorrect, try again, please");
+                        menuLogin();
+                    }
+                }else{
+                    System.out.println("User or password are incorrect");
+                    menuLogin();
+                }
+            case 2:
+                leerUser();
+                leerPass();
+                User usua2 = c.BuscarU(user);
+                desc = "A";
+                if (usua2!= null) {
+                    if (Verificar(usua2) == true && desc.equals(usua2.getDesc())) {
+                        SistAdmin();
+                    }
+                    else{
+                        System.out.println("Your credencial is not able");
+                        menuLogin();
+                    }
+                }else{
+                    System.out.println("User or password are incorrect ");
+                    menuLogin();
+                }
+            case 3:
+                System.exit(0);
+            default:
+                System.out.println("Incorrect option");
+                menuLogin();
+        }
+
+    }
     public  long leerUser(){
         System.out.println ("Enter user's ID:");
         user = sc.nextLong();
@@ -62,8 +117,6 @@ public class Login {
         }
     }
     public void SisEmp(){
-
-
         System.out.println("\n Menu Employee: " +
                 "\n Choose an option: " +
                 "\n 1. Create message" +
@@ -74,7 +127,6 @@ public class Login {
         int p = sc.nextInt();
         switch (p){
             case 1:
-
                 e.crearM(idUser, "E");
                 break;
             case 2:
@@ -92,6 +144,7 @@ public class Login {
                         break;
                     default:
                         System.out.println("Incorrect option");
+                        break;
                 }
                 break;
             case 3:
@@ -111,7 +164,7 @@ public class Login {
                         SisEmp();
                         break;
                     case 2:
-                        Mensaje men=  b.mostrarPrimerM();
+                        Mensaje men =  b.mostrarPrimerM();
                         enviarMensaje(men);
 
                         SisEmp();
@@ -209,6 +262,7 @@ public class Login {
                 }
             case 5:
                 u.UsuarioNuevo();
+                SistAdmin();
             case 6:
                 System.out.println("Enter user's ID you want to search: ");
                 int w = sc.nextInt();
@@ -237,58 +291,7 @@ public class Login {
     }
 
 
-    public void menuLogin(){
-        int a;
-        System.out.println("WELCOME TO THE ELECTRONIC MESSAGING SYSTEM" +
-                "\nChoose type of user: " +
-                "\n1. Employee" +
-                "\n2. Administrator");
-        a = sc.nextInt();
-        c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
 
-        switch (a){
-            case 1:
-                leerUser();
-                leerPass();
-                User usua = c.BuscarU(user);
-                desc = "E";
-                if (usua != null) {
-                    if (Verificar(usua) == true && desc.equals(usua.getDesc())) {
-                        SisEmp();
-
-                    }
-                    else{
-                        System.out.println("Su contraseña es incorrecta, vuelva a ingresar por favor ");
-                        menuLogin();
-                    }
-                }else{
-                    System.out.println("Usuario o contraseña incorrectas ");
-                    menuLogin();
-                }
-            case 2:
-                leerUser();
-                leerPass();
-                User usua2 = c.BuscarU(user);
-                desc = "A";
-                if (usua2!= null) {
-                    if (Verificar(usua2) == true && desc.equals(usua2.getDesc())) {
-                        SistAdmin();
-                    }
-                    else{
-                        System.out.println("Your credencial is not able");
-                        menuLogin();
-                    }
-                }else{
-                    System.out.println("User or password are incorrect ");
-                    menuLogin();
-                }
-            default:
-                System.out.println("Opcion incorrecta");
-                menuLogin();
-
-
-        }
-    }
     public void verBA(){
         String rem = Long.toString(idUser);
         if (m.isEmptyBA()) {
