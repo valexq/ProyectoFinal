@@ -53,8 +53,8 @@ public class SistemaEmpleado {
         System.out.println(mens.toStringPrintM());
 
         System.out.println("\n 1. Send Message" +
-                           "\n 2. Send to drafts"+
-                           "\n 3. Delete ");
+                "\n 2. Send to drafts"+
+                "\n 3. Delete ");
         int w= sc.nextInt();
         switch (w){
             case 1:
@@ -74,7 +74,7 @@ public class SistemaEmpleado {
                 }
                 break;
             case 3:
-                System.out.println("Mensaje eliminado");
+                System.out.println("Message deleted");
                 if (desc.equals("E")){
                     g.SisEmp();
                 }else if(desc.equals("A")){
@@ -82,7 +82,7 @@ public class SistemaEmpleado {
                 }
                 break;
             default:
-                System.out.println("Opcion incorrecta");
+                System.out.println("Incorrect option");
 
 
         }
@@ -98,5 +98,4 @@ public class SistemaEmpleado {
         b.agregarB(mens);
 
     }
-
 }

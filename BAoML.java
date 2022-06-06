@@ -131,7 +131,6 @@ public class BAoML {
                 bandeja.addFirst(m1);
                 str = b1.readLine();
             }
-            System.out.println("Mensaje importado ");
             bandeja.printListD();
             b1.close();
         }catch(Exception e){
@@ -150,7 +149,6 @@ public class BAoML {
                 mensajeL.Push(m1);
                 str = b1.readLine();
             }
-            System.out.println("Mensaje importado ");
             mensajeL.printListS();
             b1.close();
         }catch(Exception e){

@@ -72,7 +72,7 @@ public class Mensaje {
     }
 
     public String toStringPrintM() {
-        return "\n Remitente: " + remitente +
+        return "\n Sender: " + remitente +
                 "\n Receiver: " + receptor+
                 "\n Date: " + fechaIn +
                 "\n Hour: " + horaIn +
@@ -94,7 +94,7 @@ public class Mensaje {
     public String toString() {
 
         return
-                "\n Receptor: " + receptor + "\t\t\t Date: " + fechaIn +
+                "\n Receiver: " + receptor + "\t\t\t Date: " + fechaIn +
                         "\n Subject: " + asunto ;
     }
     public void importFileMens(BufferedReader b1, String str) {

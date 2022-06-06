@@ -87,7 +87,6 @@ public class Borradores {
                 borrador.Push(m1);
                 str = b1.readLine();
             }
-            System.out.println("Mensaje importado ");
             borrador.printListS();
             b1.close();
 

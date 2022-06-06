@@ -31,10 +31,10 @@ public class Login {
 
 
     public String leerPass () {
-        System.out.println(  "Ingrese la contraseña: " );
+        System.out.println(  "Enter user's password: " );
         pass = sc.next();
         if ( pass.isEmpty( ) ) {
-            System.out.println ( "Contraseña incorrecta \n Este espacio no puede estar vacio, reintente por favor" );
+            System.out.println ( "Incorrect password \n This space can't be empty,try again, please" );
             return leerPass ();
         }
         else
@@ -70,7 +70,7 @@ public class Login {
                 "\n 2. View inbox" +
                 "\n 3. View Read Messages" +
                 "\n 4. View Drafts"+
-                "\n 5. cerrar sesion");
+                "\n 5. Sign off");
         int p = sc.nextInt();
         switch (p){
             case 1:
@@ -79,8 +79,8 @@ public class Login {
                 break;
             case 2:
                 verBA();
-                System.out.println("1. Ver mensaje"
-                        + "\n2. Volver al menu anterior ");
+                System.out.println("1. View message"
+                        + "\n2. Back to previous menu ");
                 int t = sc.nextInt();
                 switch (t){
                     case 1:
@@ -91,7 +91,7 @@ public class Login {
                         SisEmp();
                         break;
                     default:
-                        System.out.println("Opcion incorrecta");
+                        System.out.println("Incorrect option");
                 }
                 break;
             case 3:
@@ -100,9 +100,9 @@ public class Login {
                 break;
             case 4:
                 verB();
-                System.out.println("\n1. Ver primer mensaje "+
-                        "\n2. Enviar primer mensaje  "+
-                        "\n3. Eliminar primer mensaje ");
+                System.out.println("\n1. View first message"+
+                        "\n2. Send first message"+
+                        "\n3. Delete first message");
                 int o = sc.nextInt();
                 switch (o){
                     case 1:
@@ -121,20 +121,20 @@ public class Login {
                         SisEmp();
                         break;
                     default:
-                        System.out.println("Opcion incorrecta");
+                        System.out.println("Incorrect option");
                         //falta while
                 }
                 break;
             case 5:
                 menuLogin();
             default:
-                System.out.println("Opcion incorrecta");
+                System.out.println("Incorrect option" );
                 SisEmp();
 
         }
     }
     public void verM (){
-        System.out.println("Ingrese el indice del mensaje que quiere ver: ");
+        System.out.println("Enter index of message you want to view: ");
         int i = sc.nextInt();
         DoubleNode temp = m.verMensaje(i);
         Mensaje men = (Mensaje) temp.getData();
@@ -143,7 +143,7 @@ public class Login {
 
     public void SistAdmin(){
         System.out.println("\n Menu Administrator: " +
-                "\n Choose an option: " +
+        "\n Choose an option: " +
                 "\n 1. Create message" +
                 "\n 2. View inbox" +
                 "\n 3. View Read Messages" +
@@ -152,8 +152,7 @@ public class Login {
                 "\n 6. Search user" +
                 "\n 7. Delete user" +
                 "\n 8. Change user's password"+
-                "\n 9. cerrar sesion"
-        );
+                "\n 9. Sign off");
         int p = sc.nextInt();
         switch (p){
             case 1:
@@ -162,8 +161,8 @@ public class Login {
                 break;
             case 2:
                 verBA();
-                System.out.println("1. Ver mensaje"
-                + "\n2. Volver al menu anterior ");
+                System.out.println("1. View message"
+                        + "\n2. Back to previous menu ");
                 int t = sc.nextInt();
                 switch (t){
                     case 1:
@@ -174,11 +173,9 @@ public class Login {
                         SistAdmin();
                         break;
                     default:
-                        System.out.println("Opcion incorrecta");
+                        System.out.println("Incorrect option");
                         SisEmp();
                 }
-
-
                 break;
             case 3:
                 verML();
@@ -186,9 +183,9 @@ public class Login {
                 break;
             case 4:
                 verB();
-                System.out.println("1. Ver primer mensaje "+
-                                   "\n2. Enviar primer mensaje  "+
-                                   "\n3. Eliminar primer mensaje ");
+                System.out.println("\n1. View first message"+
+                        "\n2. Send first message"+
+                        "\n3. Delete first message");
                 int o = sc.nextInt();
                 switch (o){
                     case 1:
@@ -206,30 +203,30 @@ public class Login {
                         SistAdmin();
                         break;
                     default:
-                        System.out.println("Opcion incorrecta");
+                        System.out.println("Incorrect option");
                         SistAdmin();
                         break;
                 }
             case 5:
                 u.UsuarioNuevo();
             case 6:
-                System.out.println("Ingrese el ID del usuario que desea buscar:");
+                System.out.println("Enter user's ID you want to search: ");
                 int w = sc.nextInt();
                 System.out.println(c.BuscarU(w));
                 SistAdmin();
             case 7:
-                System.out.println("Ingrese el ID del usuario que desea eliminar:");
+                System.out.println("Enter user's ID you want to delete:");
                 int z = sc.nextInt();
                 c.EliminarU(z);
                 SistAdmin();
             case 8:
                 PreguntarU();
-                System.out.println("Usuario eliminado exitosamente");
+                System.out.println("User deleted sucessfully");
                 SistAdmin();
             case 9:
                 menuLogin();
             default:
-                System.out.println("Opcion incorrecta");
+                System.out.println("Incorrect option");
                 SistAdmin();
         }
     }
@@ -242,9 +239,10 @@ public class Login {
 
     public void menuLogin(){
         int a;
-        System.out.println( "Choose type of user: " +
-                "\n 1. Employee" +
-                "\n 2. Administrator");
+        System.out.println("WELCOME TO THE ELECTRONIC MESSAGING SYSTEM" +
+                "\nChoose type of user: " +
+                "\n1. Employee" +
+                "\n2. Administrator");
         a = sc.nextInt();
         c.importUser("C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Empleados.txt", "C:\\Users\\Acer\\Documents\\GitHub\\ProyectoFinal\\Password.txt");
 

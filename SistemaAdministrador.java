@@ -1,4 +1,4 @@
-import javax.swing.*;
+
 import java.io.*;
 public class SistemaAdministrador extends   SistemaEmpleado {
     private DoubleList empleados;
@@ -28,7 +28,7 @@ public class SistemaAdministrador extends   SistemaEmpleado {
              return null;
          }
          else{
-             System.out.println("Usuario Encontrado");
+
              return (User)temp.getData();
          }
      }
